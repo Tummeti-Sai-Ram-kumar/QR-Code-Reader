@@ -1,12 +1,20 @@
 var GeneratebtnText = document.getElementById("gen-info");
 var Scanner = document.getElementById("scanner");
 var scanit = document.getElementById("file-scan");
-var d;
+
 scanit.addEventListener('click',() =>{
     var scanner = new Instascan.Scanner({ video: document.getElementById('scanner-preview'), scanPeriod: 5, mirror: false });
       scanner.addListener('scan',function(content){
         alert(content);
-        ShowInfo(content);
+
+        Scanner.classList.remove("Show-Scanner");
+        document.getElementById("qr-contents").classList.add("Expand");
+        GeneratebtnText.innerHTML = "Generating the info";
+        setTimeout(() => {
+            GeneratebtnText.innerHTML = "Generated the Info";
+        },500);
+
+        document.getElementById("qr-text").value = content.toString();
         //window.location.href=content;
       });
       
@@ -42,15 +50,3 @@ scanit.addEventListener('click',() =>{
       });
 })
 
-
-function ShowInfo(content){
-    window.alert(content);
-    Scanner.classList.remove("Show-Scanner");
-        document.getElementById("qr-contents").classList.add("Expand");
-        GeneratebtnText.innerHTML = "Generating the info";
-        setTimeout(() => {
-            GeneratebtnText.innerHTML = "Generated the Info";
-        },500);
-
-        document.getElementById("qr-text").value = content.toString();
-}
