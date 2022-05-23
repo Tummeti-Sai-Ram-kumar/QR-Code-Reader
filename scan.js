@@ -5,16 +5,26 @@ var scanit = document.getElementById("file-scan");
 scanit.addEventListener('click',() =>{
     var scanner = new Instascan.Scanner({ video: document.getElementById('scanner-preview'), scanPeriod: 5, mirror: false });
       scanner.addListener('scan',function(content){
+       
         alert(content);
 
-        Scanner.classList.remove("Show-Scanner");
-        document.getElementById("qr-contents").classList.add("Expand");
-        GeneratebtnText.innerHTML = "Generating the info";
         setTimeout(() => {
-            GeneratebtnText.innerHTML = "Generated the Info";
-        },500);
+          Scanner.classList.remove("Show-Scanner");
+          
+     //     GeneratebtnText.innerHTML = "Generating the info";
+          setTimeout(() => {
+              document.getElementById("qr-contents").classList.add("Expand");
+              
+          },1000);
 
-        document.getElementById("qr-text").value = content.toString();
+          setTimeout(() => {
+            GeneratebtnText.innerHTML = "Generated the Info";
+            document.getElementById("qr-text").value = content.toString();
+        },2000);
+          
+        },3000);
+
+        
         //window.location.href=content;
       });
       
