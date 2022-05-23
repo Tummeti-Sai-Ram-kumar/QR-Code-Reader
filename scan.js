@@ -11,15 +11,16 @@ scanit.addEventListener('click',() =>{
         setTimeout(() => {
           Scanner.classList.remove("Show-Scanner");
         },1000);
-     //     GeneratebtnText.innerHTML = "Generating the info";
+     //     
           setTimeout(() => {
               document.getElementById("qr-contents").classList.add("Expand");
-          },1500);
+              GeneratebtnText.innerHTML = "Generating the info";
+          },2000);
 
           setTimeout(() => {
             GeneratebtnText.innerHTML = "Generated the Info";
             document.getElementById("qr-text").value = content.toString();
-        },2000);
+        },3000);
           
         //window.location.href=content;
       });
