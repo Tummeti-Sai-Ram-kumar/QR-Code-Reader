@@ -15,14 +15,14 @@ scanit.addEventListener('click',() =>{
           setTimeout(() => {
               document.getElementById("qr-contents").classList.add("Expand");
               
-          },1000);
+          },1500);
 
           setTimeout(() => {
             GeneratebtnText.innerHTML = "Generated the Info";
             document.getElementById("qr-text").value = content.toString();
         },2000);
           
-        },3000);
+        },1000);
 
         
         //window.location.href=content;
