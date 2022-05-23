@@ -10,6 +10,7 @@ scanit.addEventListener('click',() =>{
 
         setTimeout(() => {
           Scanner.classList.remove("Show-Scanner");
+            document.getElementById("qr-text").value = content.toString();
         },1000);
      //     
           setTimeout(() => {
@@ -19,7 +20,7 @@ scanit.addEventListener('click',() =>{
 
           setTimeout(() => {
             GeneratebtnText.innerHTML = "Generated the Info";
-            document.getElementById("qr-text").value = content.toString();
+            
         },3000);
           
         //window.location.href=content;
