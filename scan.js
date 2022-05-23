@@ -6,7 +6,7 @@ scanit.addEventListener('click',() =>{
     var scanner = new Instascan.Scanner({ video: document.getElementById('scanner-preview'), scanPeriod: 5, mirror: false });
       scanner.addListener('scan',function(content){
         alert(content);
-     //   ShowInfo(content);
+        ShowInfo(content);
         //window.location.href=content;
       });
       
@@ -44,6 +44,7 @@ scanit.addEventListener('click',() =>{
 
 
 function ShowInfo(content){
+    window.alert(content);
     Scanner.classList.remove("Show-Scanner");
         document.getElementById("qr-contents").classList.add("Expand");
         GeneratebtnText.innerHTML = "Generating the info";
