@@ -6,15 +6,14 @@ scanit.addEventListener('click',() =>{
     var scanner = new Instascan.Scanner({ video: document.getElementById('scanner-preview'), scanPeriod: 5, mirror: false });
       scanner.addListener('scan',function(content){
        
-        alert(content);
+       // alert(content);
 
         setTimeout(() => {
           Scanner.classList.remove("Show-Scanner");
-          
+        },1000);
      //     GeneratebtnText.innerHTML = "Generating the info";
           setTimeout(() => {
               document.getElementById("qr-contents").classList.add("Expand");
-              
           },1500);
 
           setTimeout(() => {
@@ -22,9 +21,6 @@ scanit.addEventListener('click',() =>{
             document.getElementById("qr-text").value = content.toString();
         },2000);
           
-        },1000);
-
-        
         //window.location.href=content;
       });
       
