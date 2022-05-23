@@ -79,7 +79,10 @@ close.addEventListener('click', () => {
     UploadbtnText.innerHTML = "Upload " + `<i class="fa-solid fa-cloud-arrow-up">`;
     GeneratebtnText.innerHTML = "Generate the info";
     input.value = null;
-    window.location.assign("index.html");
+    
+    setTimeout(() => {
+        window.location.assign("index.html");
+    },2000);
 })
 
 CloseScanner.addEventListener('click',() => {
@@ -123,6 +126,8 @@ function fetchRequest(formData,myfile){
 
 
 scanit.addEventListener('click',() =>{
+    document.getElementById("qr-contents").classList.remove("Expand");
+    document.getElementById("qr-code").classList.remove("Expand-QR");
     var scanner = new Instascan.Scanner({ video: document.getElementById('scanner-preview'), scanPeriod: 5, mirror: false });
       scanner.addListener('scan',function(content){
        
